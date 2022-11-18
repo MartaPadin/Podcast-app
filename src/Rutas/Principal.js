@@ -26,7 +26,7 @@ const Principal = () => {
         {pods.map((pods) => {
           const id = pods.id.attributes["im:id"];
           console.log(id);
-          const tittle = pods.title.label;
+          const tittle = pods["im:name"].label;
           const author = pods["im:artist"].label;
 
           console.log(author);
