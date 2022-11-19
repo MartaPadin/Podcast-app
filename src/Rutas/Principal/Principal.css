@@ -2,13 +2,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.podcaster {
-    text-align: left;
-    margin-top: 50px;
-    margin-left: 20px ;
-    color:deepskyblue;
-    
-}
+
 .ResultPodcast {
     box-shadow:10px 10px 10px grey;
     width: 33%;
@@ -23,4 +17,27 @@
 }
 .titulo{
     font-weight: bold;
+}
+.contador {
+    display: block;
+    width: 40px;
+    height: 30px;
+    border-radius: 30%;
+    background-color: deepskyblue;
+    margin-right: 20px;
+    color: white;
+    font-weight: bolder;
+
+}
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    margin-right: 100px;
+}
+
+.filtro {
+    border-radius: 8%;
+    width: 300px;
+   
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Principal.css";
 
 const Principal = () => {
@@ -12,10 +13,12 @@ const Principal = () => {
         "https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json"
       );
       if (res.ok) {
+
         const body = await res.json();
         const podcast = body.feed.entry;
+        
         setPodcast(podcast); //Inicializamos todos los podcats, sobre los que filtraremos
-        setPodcastTemp(podcast); //Inicializamos los podcast que se van apintar
+        setPodcastTemp(podcast); //Inicializamos los podcast que se van a pintar
       } else console.error("error");
     };
 
@@ -39,24 +42,29 @@ const Principal = () => {
 
   return (
     <div className="container">
-      <h1 className="podcaster">Podcaster</h1>
-      <input type="text" onChange={handleChange} placeholder="Filter podcast" />
+      <div className="head">
+         <button className="contador"> {Object.keys(podsTemp).length} </button>
+      <input className="filtro" type="text" onChange={handleChange} placeholder="Filter podcast" />
+      </div>
+     
       <div className="podcast">
         {podsTemp.map((pod) => {
+
           const id = pod.id.attributes["im:id"];
           const tittle = pod["im:name"].label;
           const author = pod["im:artist"].label;
 
           return (
             <article key={id} id={id} className="ResultPodcast">
-              <a title={tittle} href="https://itunes.apple.com/lookup?id={id}">
-                <img
+            
+            <Link to={`/podcast/${id}`}>
+               <img
                   className="foto"
                   src={pod["im:image"][2].label}
                   alt={tittle}
                 />
-              </a>
-
+            </Link>
+             
               <p className="titulo">{JSON.stringify(tittle)}</p>
               <p> Autor : {JSON.stringify(author)} </p>
             </article>
