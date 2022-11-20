@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Iframe from "react-iframe";
 
 const Podcast = () => {
@@ -33,7 +33,8 @@ const Podcast = () => {
 
 
   return <div>
-<Iframe url={track} />
+    
+    <a href={track} target='_blank' rel="noopener noreferrer"> {track} </a>
 
   </div>;
 };
