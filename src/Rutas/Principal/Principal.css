@@ -1,0 +1,43 @@
+.podcast {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ResultPodcast {
+    box-shadow:10px 10px 10px grey;
+    width: 33%;
+    margin-top: 10%;
+}
+.foto{
+    border-radius: 50%;
+    width: 25%;
+    position: relative;
+    
+    
+}
+.titulo{
+    font-weight: bold;
+}
+.contador {
+    display: block;
+    width: 40px;
+    height: 30px;
+    border-radius: 30%;
+    background-color: deepskyblue;
+    margin-right: 20px;
+    color: white;
+    font-weight: bolder;
+
+}
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    margin-right: 100px;
+}
+
+.filtro {
+    border-radius: 8%;
+    width: 300px;
+   
+}
