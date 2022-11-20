@@ -4,6 +4,7 @@
 ```sh
 https://github.com/MartaPadin/Podcast-app
 ``` 
+En la rama Master.
 
 > Abrir aplicacion con visual studio
 ```sh
