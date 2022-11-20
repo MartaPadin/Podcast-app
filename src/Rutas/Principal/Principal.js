@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Principal.css";
+import useLocalStorage from "../../Hooks/useLocalStorage";
+
 
 const Principal = () => {
-  const [pods, setPodcast] = useState([]);
+  const [pods, setPodcast] = useLocalStorage("pods", "");
   const [podsTemp, setPodcastTemp] = useState([]);
-  
+
 
   useEffect(() => {
     const Podcast = async () => {
@@ -43,6 +45,7 @@ const Principal = () => {
   return (
     <div className="container">
       <div className="head">
+     
          <button className="contador"> {Object.keys(podsTemp).length} </button>
       <input className="filtro" type="text" onChange={handleChange} placeholder="Filter podcast" />
       </div>

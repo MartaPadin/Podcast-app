@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Iframe from "react-iframe";
 
 const Podcast = () => {
   const [track, setTracks] = useState([]);
@@ -18,7 +19,7 @@ const Podcast = () => {
 
   //Función para acceder a recursos externos.
 
-  const GrupoPodcast = async () => {
+ /* const GrupoPodcast = async () => {
     await fetch(
       `https://api.allorigins.win/get?url=${encodeURIComponent(track)}`
     )
@@ -28,9 +29,13 @@ const Podcast = () => {
       })
       .then((data) => console.log(data.contents));
   };
-  GrupoPodcast();
+  GrupoPodcast();*/
 
-  return <div></div>;
+
+  return <div>
+<Iframe url={track} />
+
+  </div>;
 };
 
 export default Podcast;
